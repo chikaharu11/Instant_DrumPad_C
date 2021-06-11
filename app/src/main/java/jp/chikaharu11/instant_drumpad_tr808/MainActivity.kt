@@ -100,6 +100,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var kCustomAdapter: CustomAdapter
     private lateinit var lCustomAdapter: CustomAdapter
     private lateinit var mCustomAdapter: CustomAdapter
+    private lateinit var aaCustomAdapter: CustomAdapter
+    private lateinit var abCustomAdapter: CustomAdapter
+    private lateinit var acCustomAdapter: CustomAdapter
 
     private lateinit var nCustomAdapter: CustomAdapter
     private lateinit var oCustomAdapter: CustomAdapter
@@ -123,6 +126,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var kSoundList: MutableList<SoundList>
     private lateinit var lSoundList: MutableList<SoundList>
     private lateinit var mSoundList: MutableList<SoundList>
+    private lateinit var aaSoundList: MutableList<SoundList>
+    private lateinit var abSoundList: MutableList<SoundList>
+    private lateinit var acSoundList: MutableList<SoundList>
 
     private lateinit var nSoundList: MutableList<SoundList>
     private lateinit var oSoundList: MutableList<SoundList>
@@ -180,67 +186,57 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
 
         aSoundList = arrayListOf(
-                SoundList("e808_bd_long_01.ogg"),
-                SoundList("e808_bd_long_02.ogg"),
-                SoundList("e808_bd_long_03.ogg"),
-                SoundList("e808_bd_long_04.ogg"),
-                SoundList("e808_bd_long_05.ogg"),
-                SoundList("e808_bd_long_06.ogg"),
-                SoundList("e808_bd_long_07.ogg"),
-                SoundList("e808_bd_long_08.ogg"),
-                SoundList("e808_bd_long_09.ogg"),
-                SoundList("e808_bd_long_10.ogg"),
-                SoundList("e808_bd_long_11.ogg"),
-                SoundList("e808_bd_long_12.ogg"),
-                SoundList("e808_bd_long_13.ogg"),
-                SoundList("e808_bd_long_14.ogg"),
-                SoundList("e808_bd_long_15.ogg"),
-                SoundList("e808_bd_long_16.ogg"),
-                SoundList("e808_bd_long_17.ogg"),
-                SoundList("e808_bd_short_01.ogg"),
-                SoundList("e808_bd_short_02.ogg"),
-                SoundList("e808_bd_short_03.ogg"),
-                SoundList("e808_bd_short_04.ogg"),
-                SoundList("e808_bd_short_05.ogg"),
-                SoundList("e808_bd_short_06.ogg"),
-                SoundList("e808_bd_short_07.ogg"),
-                SoundList("e808_bd_short_08.ogg"),
-                SoundList("e808_bd_short_09.ogg"),
-                SoundList("e808_bd_short_10.ogg"),
-                SoundList("e808_bd_short_11.ogg"),
-                SoundList("e808_bd_short_12.ogg")
+            SoundList("cycdh_crash_01.ogg"),
+            SoundList("cycdh_crash_02.ogg"),
+            SoundList("cycdh_crash_03.ogg"),
+            SoundList("cycdh_multicrash_01.ogg"),
+            SoundList("cycdh_multicrash_02.ogg"),
+            SoundList("cycdh_multicrash_03.ogg"),
+            SoundList("cycdh_multicrashhi_01.ogg"),
+            SoundList("cycdh_multicrashhi_02.ogg"),
+            SoundList("cycdh_multicrashhi_03.ogg"),
+            SoundList("cycdh_multicrashlo_01.ogg"),
+            SoundList("cycdh_multicrashlo_02.ogg"),
+            SoundList("cycdh_multicrashlo_03.ogg")
                 )
 
         bSoundList = arrayListOf(
-                SoundList("e808_cp01.ogg"),
-                SoundList("e808_cp02.ogg"),
-                SoundList("e808_cp03.ogg"),
-                SoundList("e808_cp04.ogg"),
-                SoundList("e808_cp05.ogg"),
-                SoundList("e808_cp06.ogg"),
-                SoundList("e808_cp07.ogg"),
-                SoundList("e808_cp08.ogg"),
-                SoundList("e808_cp09.ogg"),
-                SoundList("e808_cp10.ogg"),
-                SoundList("e808_cp11.ogg"),
-                SoundList("e808_cp12.ogg"),
-                SoundList("e808_cp13.ogg"),
-                SoundList("e808_cp14.ogg"),
-                SoundList("e808_cp15.ogg")
+            SoundList("cycdh_trasha_01.ogg"),
+            SoundList("cycdh_trasha_02.ogg"),
+            SoundList("cycdh_trasha_03.ogg"),
+            SoundList("cycdh_trasha_04.ogg"),
+            SoundList("cycdh_trasha_05.ogg"),
+            SoundList("cycdh_trasha_06.ogg"),
+            SoundList("cycdh_trasha_07.ogg"),
+            SoundList("cycdh_trasha_08.ogg"),
+            SoundList("cycdh_trasha_09.ogg"),
+            SoundList("cycdh_trashb_01.ogg"),
+            SoundList("cycdh_trashb_02.ogg"),
+            SoundList("cycdh_trashb_03.ogg"),
+            SoundList("cycdh_trashc_01.ogg"),
+            SoundList("cycdh_trashc_02.ogg"),
+            SoundList("cycdh_trashc_03.ogg"),
+            SoundList("cycdh_trashc_04.ogg"),
+            SoundList("cycdh_trashd_01.ogg"),
+            SoundList("cycdh_trashd_02.ogg"),
+            SoundList("cycdh_trashe_01.ogg"),
+            SoundList("cycdh_trashe_02.ogg"),
+            SoundList("cycdh_trashe_03.ogg"),
+            SoundList("cycdh_trashe_04.ogg"),
+            SoundList("cycdh_trashe_05.ogg"),
+            SoundList("cycdh_trashf_01.ogg"),
+            SoundList("cycdh_trashf_02.ogg"),
+            SoundList("cycdh_trashf_03.ogg"),
+            SoundList("cycdh_trashf_04.ogg")
         )
         cSoundList = arrayListOf(
-                SoundList("e808_cl01.ogg"),
-                SoundList("e808_cl02.ogg"),
-                SoundList("e808_cl03.ogg"),
-                SoundList("e808_cl04.ogg"),
-                SoundList("e808_cl05.ogg"),
-                SoundList("e808_cl06.ogg"),
-                SoundList("e808_cl07.ogg"),
-                SoundList("e808_cl08.ogg"),
-                SoundList("e808_cl09.ogg"),
-                SoundList("e808_cl10.ogg"),
-                SoundList("e808_cl11.ogg")
-        )
+            SoundList("acoustic_hat_01.ogg"),
+            SoundList("acoustic_hat_02.ogg"),
+            SoundList("acoustic_hat_03.ogg"),
+            SoundList("acoustic_hat_04.ogg"),
+            SoundList("acoustic_hat_05.ogg"),
+            SoundList("acoustic_hat_06.ogg"),
+            )
         dSoundList = arrayListOf(
                 SoundList("e808_ch01.ogg"),
                 SoundList("e808_ch02.ogg"),
@@ -584,6 +580,15 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 SoundList("e808_loop_toms_13203.ogg"),
                 SoundList("e808_loop_toms_13204.ogg")
         )
+        aaSoundList = arrayListOf(
+
+        )
+        abSoundList = arrayListOf(
+
+        )
+        acSoundList = arrayListOf(
+
+        )
         nSoundList = arrayListOf(
                 SoundList("e808_loop_bd_8501.ogg"),
                 SoundList("e808_loop_bd_8502.ogg"),
@@ -771,6 +776,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         kCustomAdapter = CustomAdapter(this, kSoundList, this)
         lCustomAdapter = CustomAdapter(this, lSoundList, this)
         mCustomAdapter = CustomAdapter(this, mSoundList, this)
+        aaCustomAdapter = CustomAdapter(this, aSoundList, this)
+        abCustomAdapter = CustomAdapter(this, aSoundList, this)
+        acCustomAdapter = CustomAdapter(this, aSoundList, this)
         nCustomAdapter = CustomAdapter(this, nSoundList, this)
         oCustomAdapter = CustomAdapter(this, oSoundList, this)
         pCustomAdapter = CustomAdapter(this, pSoundList, this)
@@ -970,7 +978,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         sound15 = soundPool.load(assets.openFd("e808_oh09.ogg"), 1)
 
-        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.e808_loop_bd_8501))
+        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
 
 
         imageView.setOnTouchListener { _, event ->
