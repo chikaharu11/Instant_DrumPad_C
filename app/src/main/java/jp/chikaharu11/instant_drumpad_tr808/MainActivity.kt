@@ -162,21 +162,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        textView.text = "e808_bd_short_01"
-        textView2.text = "e808_bd_long_02"
-        textView3.text = "e808_bd_long_03"
-        textView4.text = "e808_rs09"
-        textView5.text = "e808_bd_short_05"
-        textView6.text = "e808_hc03"
-        textView7.text = "e808_lc08"
-        textView8.text = "e808_lt02"
-        textView9.text = "e808_cy04"
-        textView10.text = "e808_mc05"
-        textView11.text = "e808_cb07"
-        textView12.text = "e808_sd09"
-        textView13.text = "e808_bd_long_07"
-        textView14.text = "e808_lc10"
-        textView15.text = "e808_oh09"
+        textView.text = "cycdh_trasha_07"
+        textView2.text = "cycdh_multicrashlo_01"
+        textView3.text = "cycdh_crash_01"
+        textView4.text = "khats_clsd_02"
+        textView5.text = "cycdh_ludflama_04"
+        textView6.text = "cycdh_sab_hfhat_02"
+        textView7.text = "pearlpiccolo_side_snron_01"
+        textView8.text = "cycdh_ludrimc_03"
+        textView9.text = "cycdh_ludflamb_02"
+        textView10.text = "cycdh_ludrima_01"
+        textView11.text = "cycdh_acoukick_12"
+        textView12.text = "acoustic_snare_03"
+        textView13.text = "cycdh_loosekick_04"
+        textView14.text = "cycdh_keskick_08"
+        textView15.text = "cycdh_loosekick_07"
 
         MobileAds.initialize(this) {}
 
