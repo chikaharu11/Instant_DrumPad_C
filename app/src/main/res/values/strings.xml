@@ -111,11 +111,13 @@
     </string-array>
 
     <string-array name="spinnerItems2">
-        <item>Loop [85bpm]</item>
-        <item>Loop [95bpm]</item>
-        <item>Loop [105bpm]</item>
-        <item>Loop [124bpm]</item>
-        <item>Loop [132bpm]</item>
+        <item>Bass</item>
+        <item>Drums</item>
+        <item>Guitar</item>
+        <item>Keys</item>
+        <item>Orch</item>
+        <item>Percussion</item>
+        <item>Synth</item>
         <item>Internal sounds</item>
         <item>External sounds</item>
         <item>Sounds in Music folder</item>
