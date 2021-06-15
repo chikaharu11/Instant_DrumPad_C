@@ -1,4 +1,4 @@
-package jp.chikaharu11.instant_drumpad_tr808
+package jp.chikaharu11.instant_drumpad_drums
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     fun selectAudio() {
-        val uri = Uri.parse("content://com.android.externalstorage.documents/document/primary%3AAndroid%2Fdata%2Fjp.chikaharu11.instant_drumpad_tr808%2Ffiles%2FMusic")
+        val uri = Uri.parse("content://com.android.externalstorage.documents/document/primary%3AAndroid%2Fdata%2Fjp.chikaharu11.instant_drumpad_drums%2Ffiles%2FMusic")
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             putExtra(DocumentsContract.EXTRA_INITIAL_URI, uri)
@@ -960,7 +960,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         mp = MediaPlayer()
 
-        supportActionBar?.title ="e808_loop_bd_8501"
+        supportActionBar?.title ="guitar_85_01"
 
 
             val audioUri = MediaStore.Audio.Media.INTERNAL_CONTENT_URI
@@ -1165,7 +1165,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         sound15 = soundPool.load(assets.openFd("cycdh_loosekick_07.ogg"), 1)
 
-        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
+        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.guitar_85_01))
 
 
         imageView.setOnTouchListener { _, event ->

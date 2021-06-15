@@ -1,4 +1,4 @@
-# Instant_DrumPad_TR-808
+# Instant_DrumPad_Drums
 スマホアプリ(Android) インスタントドラムパッドTR-808のソースコードです。
 
 drawbleフォルダとrawフォルダのoggファイルはアップロードされていません。
