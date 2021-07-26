@@ -26,6 +26,7 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import com.arthenica.mobileffmpeg.FFmpeg
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
@@ -1169,63 +1170,81 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
 
         imageView.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound1, 1.0f, 1.0f, 1, 0, 1.0f)
                 }
                 false
         }
 
         imageView2.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound2, 1.0f, 1.0f, 1, 0, 1.0f)
                 }
                 false
         }
 
         imageView3.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound3, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
         }
 
         imageView4.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound4, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
         }
 
         imageView5.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound5, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
         }
 
         imageView6.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound6, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
         }
 
         imageView7.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound7, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
         }
 
         imageView8.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound8, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
         }
 
         imageView9.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound9, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
@@ -1233,42 +1252,54 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
 
         imageView10.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound10, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
         }
 
         imageView11.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound11, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
         }
 
         imageView12.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound12, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
         }
 
         imageView13.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound13, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
         }
 
         imageView14.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound14, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
         }
 
         imageView15.setOnTouchListener { _, event ->
-                if (event.action == MotionEvent.ACTION_DOWN) {
+            if (listView.isVisible) {
+                listView.visibility = View.INVISIBLE
+            } else if (event.action == MotionEvent.ACTION_DOWN) {
                         soundPool.play(sound15, 1.0f, 1.0f, 0, 0, 1.0f)
                 }
                 false
@@ -2264,6 +2295,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         when (item.itemId) {
 
             R.id.menu1 -> {
+                if (soundListView.isVisible) {
+                    soundListView.visibility = View.INVISIBLE
+                }
                 if (switch1.isChecked) {
                     lmp.stop()
                     soundPool.autoPause()
@@ -2300,6 +2334,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
 
             R.id.menu8 -> {
+                if (soundListView.isVisible) {
+                    soundListView.visibility = View.INVISIBLE
+                }
                 when {
 
                     Build.VERSION.SDK_INT < Build.VERSION_CODES.Q -> Toast.makeText(applicationContext, R.string.menu8, Toast.LENGTH_LONG).show()
@@ -2377,7 +2414,17 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             }
 
             R.id.menu10 -> {
+                if (soundListView.isVisible) {
+                    soundListView.visibility = View.INVISIBLE
+                }
                 selectCh()
+                return true
+            }
+
+            R.id.action_settings -> {
+                if (soundListView.isVisible) {
+                    soundListView.visibility = View.INVISIBLE
+                }
                 return true
             }
 
