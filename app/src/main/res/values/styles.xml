@@ -16,6 +16,8 @@
 
     <style name="titleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">#ffffff</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:autoSizeTextType">uniform</item>
     </style>
 
