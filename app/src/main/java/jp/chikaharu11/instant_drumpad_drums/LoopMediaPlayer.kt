@@ -13,10 +13,12 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     private var mCounter = 1
     private var mCurrentPlayer: MediaPlayer? = null
     private var mNextPlayer: MediaPlayer? = null
+    private var count = 0.5f
     private fun createNextMediaPlayer() {
         mNextPlayer = MediaPlayer.create(mContext, mResId)
         mCurrentPlayer!!.setNextMediaPlayer(mNextPlayer)
         mCurrentPlayer!!.setOnCompletionListener(onCompletionListener)
+        setVolume(count,count)
     }
 
     private val onCompletionListener =
@@ -31,8 +33,24 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     val isPlaying: Boolean
         get() = mCurrentPlayer!!.isPlaying
 
-    fun setVolume(leftVolume: Float, rightVolume: Float) {
+    private fun setVolume(leftVolume: Float, rightVolume: Float) {
         mCurrentPlayer!!.setVolume(leftVolume, rightVolume)
+    }
+
+    fun volumePlus() {
+        if (count <= 1.0f) {
+            count += 0.1f
+        }
+        setVolume(count,count)
+        println(count)
+    }
+
+    fun volumeMinus() {
+        if (count >= 0.1f) {
+            count -= 0.1f
+        }
+        setVolume(count,count)
+        println(count)
     }
 
     @Throws(IllegalStateException::class)

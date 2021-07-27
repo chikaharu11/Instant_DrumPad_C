@@ -2350,6 +2350,16 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 return true
             }
 
+            R.id.menuPlus -> {
+                lmp.volumePlus()
+                return true
+            }
+
+            R.id.menuMinus -> {
+                lmp.volumeMinus()
+                return true
+            }
+
             R.id.menu9 -> {
                 radioButton17.performClick()
                 radioButton18.performClick()
