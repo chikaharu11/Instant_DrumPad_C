@@ -1397,6 +1397,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     override fun clicked2(soundList: SoundList) {
         when {
             radioButton.isChecked && radioButton18.isChecked -> {
+                imageView.setColorFilter(Color.parseColor("#5A5A66"))
+                handler.postDelayed({ imageView.setColorFilter(Color.parseColor("#EC9F05")) }, 1000)
                 sound1 = soundPool.load(soundList.name, 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
@@ -1510,6 +1512,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 }
             }
             radioButton.isChecked && radioButton19.isChecked -> {
+                imageView.setColorFilter(Color.parseColor("#5A5A66"))
+                handler.postDelayed({ imageView.setColorFilter(Color.parseColor("#EC9F05")) }, 1000)
                 sound1 = soundPool.load(assets.openFd(soundList.name), 1)
                 soundPool.setOnLoadCompleteListener{ soundPool, _, _ ->
                     soundPool.stop(soundPool.play(sound16, 1.0f, 1.0f, 0, 0, 1.0f))
