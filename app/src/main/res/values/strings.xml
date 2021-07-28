@@ -87,6 +87,13 @@
 
     <string name="builder3">To (start/stop) recording, touch the microphone.</string>
     <string name="back">back</string>
+    <string name="menuPlus">Main Volume UP</string>
+    <string name="menuMinus">Main Volume DOWN</string>
+    <string name="lowest">Volume:Lowest</string>
+    <string name="low">Volume:Low</string>
+    <string name="middle">Volume:Middle</string>
+    <string name="high">Volume:High</string>
+    <string name="highest">Volume:Highest</string>
 
     <string-array name="spinnerItems">
         <item>Cymbals</item>

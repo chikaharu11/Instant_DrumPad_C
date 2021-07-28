@@ -32,12 +32,12 @@
 
             <item
                 android:id="@+id/menuPlus"
-                android:title="@string/select9"
+                android:title="@string/menuPlus"
                 app:showAsAction="never" />
 
             <item
                 android:id="@+id/menuMinus"
-                android:title="@string/select9"
+                android:title="@string/menuMinus"
                 app:showAsAction="never" />
 
             <item

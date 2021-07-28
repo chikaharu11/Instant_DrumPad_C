@@ -5,6 +5,7 @@ import android.media.MediaPlayer
 import android.media.MediaPlayer.OnCompletionListener
 import android.net.Uri
 import android.util.Log
+import android.widget.Toast
 
 
 class LoopMediaPlayer(context: Context, resId: Uri) {
@@ -13,7 +14,7 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
     private var mCounter = 1
     private var mCurrentPlayer: MediaPlayer? = null
     private var mNextPlayer: MediaPlayer? = null
-    private var count = 0.5f
+    private var count = 0.6f
     private fun createNextMediaPlayer() {
         mNextPlayer = MediaPlayer.create(mContext, mResId)
         mCurrentPlayer!!.setNextMediaPlayer(mNextPlayer)
@@ -39,18 +40,30 @@ class LoopMediaPlayer(context: Context, resId: Uri) {
 
     fun volumePlus() {
         if (count <= 1.0f) {
-            count += 0.1f
+            count += 0.25f
         }
-        setVolume(count,count)
-        println(count)
+        setVolume(count, count)
+        when {
+            count >= 1.0f -> Toast.makeText(mContext, R.string.highest, Toast.LENGTH_SHORT).show()
+            count >= 0.75f -> Toast.makeText(mContext, R.string.high, Toast.LENGTH_SHORT).show()
+            count >= 0.5f -> Toast.makeText(mContext, R.string.middle, Toast.LENGTH_SHORT).show()
+            count >= 0.25f -> Toast.makeText(mContext, R.string.low, Toast.LENGTH_SHORT).show()
+            count >= 0.0f -> Toast.makeText(mContext, R.string.lowest, Toast.LENGTH_SHORT).show()
+    }
     }
 
     fun volumeMinus() {
-        if (count >= 0.1f) {
-            count -= 0.1f
+        if (count >= 0.11f) {
+            count -= 0.25f
         }
         setVolume(count,count)
-        println(count)
+        when {
+            count >= 1.0f -> Toast.makeText(mContext, R.string.highest, Toast.LENGTH_SHORT).show()
+            count >= 0.75f -> Toast.makeText(mContext, R.string.high, Toast.LENGTH_SHORT).show()
+            count >= 0.5f -> Toast.makeText(mContext, R.string.middle, Toast.LENGTH_SHORT).show()
+            count >= 0.25f -> Toast.makeText(mContext, R.string.low, Toast.LENGTH_SHORT).show()
+            count >= 0.0f -> Toast.makeText(mContext, R.string.lowest, Toast.LENGTH_SHORT).show()
+        }
     }
 
     @Throws(IllegalStateException::class)
