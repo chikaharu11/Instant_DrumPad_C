@@ -1136,37 +1136,37 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 .setMaxStreams(20)
                 .build()
 
-        sound1 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound1 = soundPool.load(assets.openFd("cycdh_trasha_07.ogg"), 1)
 
-        sound2 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound2 = soundPool.load(assets.openFd("cycdh_multicrashlo_01.ogg"), 1)
 
-        sound3 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound3 = soundPool.load(assets.openFd("cycdh_crash_01.ogg"), 1)
 
-        sound4 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound4 = soundPool.load(assets.openFd("khats_clsd_02.ogg"), 1)
 
-        sound5 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound5 = soundPool.load(assets.openFd("cycdh_ludflama_04.ogg"), 1)
 
-        sound6 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound6 = soundPool.load(assets.openFd("cycdh_sab_hfhat_02.ogg"), 1)
 
-        sound7 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound7 = soundPool.load(assets.openFd("pearlpiccolo_side_snron_01.ogg"), 1)
 
-        sound8 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound8 = soundPool.load(assets.openFd("cycdh_ludrimc_03.ogg"), 1)
 
-        sound9 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound9 = soundPool.load(assets.openFd("cycdh_ludflamb_02.ogg"), 1)
 
-        sound10 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound10 = soundPool.load(assets.openFd("cycdh_ludrima_01.ogg"), 1)
 
-        sound11 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound11 = soundPool.load(assets.openFd("cycdh_acoukick_12.ogg"), 1)
 
-        sound12 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound12 = soundPool.load(assets.openFd("acoustic_snare_03.ogg"), 1)
 
-        sound13 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound13 = soundPool.load(assets.openFd("cycdh_loosekick_04.ogg"), 1)
 
-        sound14 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound14 = soundPool.load(assets.openFd("cycdh_keskick_08.ogg"), 1)
 
-        sound15 = soundPool.load(assets.openFd("ta.ogg"), 1)
+        sound15 = soundPool.load(assets.openFd("cycdh_loosekick_07.ogg"), 1)
 
-        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
+        lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.guitar_85_01))
 
 
         imageView.setOnTouchListener { _, event ->
@@ -2202,7 +2202,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         }
 
             button4.setOnClickListener {
-                val myDir = this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS).toString() + "/showwavespics.png"
+                try {
+                val myDir = this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)
+                    .toString() + "/showwavespics.png"
                 FFmpeg.execute("-i $audioName -filter_complex showwavespic=s=2560x1280:colors=blue:scale=0 -y $myDir")
 
                 val builder = AlertDialog.Builder(this)
@@ -2233,119 +2235,143 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 val text3 = dialogView.findViewById<TextView>(R.id.textView18)
 
                 text1.text = SimpleDateFormat("mm:ss.SSS").format(Date(0.toLong())).toString()
-                text2.text = SimpleDateFormat("mm:ss.SSS").format(Date(mp.duration.toLong())).toString()
+                text2.text =
+                    SimpleDateFormat("mm:ss.SSS").format(Date(mp.duration.toLong())).toString()
                 text3.text = audioName.replaceBeforeLast("/", "").replace("/", "")
 
-                    seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+                seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
 
-                        override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                            text1.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
-                                start = progress
+                    override fun onProgressChanged(
+                        seekBar: SeekBar?,
+                        progress: Int,
+                        fromUser: Boolean
+                    ) {
+                        text1.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
+                        start = progress
 
-                        }
-
-
-                        override fun onStartTrackingTouch(seekBar: SeekBar?) {
-
-                        }
-
-
-                        override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
-                        }
-                    })
-
-                    seekBar2.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+                    }
 
 
-                        override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                            text2.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
-                                stop = progress
-                        }
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+                    }
 
 
-                        override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
 
-                        }
+                    }
+                })
 
-
-                        override fun onStopTrackingTouch(seekBar: SeekBar?) {
-
-                        }
-                    })
+                seekBar2.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
 
-                    val image = dialogView.findViewById<View>(R.id.imageView16) as ImageView
+                    override fun onProgressChanged(
+                        seekBar: SeekBar?,
+                        progress: Int,
+                        fromUser: Boolean
+                    ) {
+                        text2.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
+                        stop = progress
+                    }
 
-                    image.setImageURI(Uri.parse(myDir))
 
-                    val button = dialogView.findViewById(R.id.button) as Button
-                    val button2 = dialogView.findViewById(R.id.button2) as Button
-                    val button3 = dialogView.findViewById(R.id.button3) as Button
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
 
-                    button.setOnClickListener {
-                            when {
-                                    start < stop -> {
-                                            val builder2 = AlertDialog.Builder(this)
-                                            val inflater2 = layoutInflater
-                                            val dialogView2 = inflater2.inflate(R.layout.file_name, null)
-                                            builder2.setView(dialogView2)
-                                                    .setTitle(R.string.button_setOnClickListener1)
-                                                    .setPositiveButton(R.string.button_setOnClickListener2) { _, _ ->
-                                                            val nt = dialogView2.findViewById<EditText>(R.id.filename)
-                                                            val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC).toString() + "/" + nt.text.replace("/".toRegex(), "") + audioName.replaceBeforeLast(".", "")
-                                                            try {
-                                                                FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $audioName -y $fnt")
-                                                                button3.performClick()
-                                                                Toast.makeText(applicationContext, R.string.button_setOnClickListener3, Toast.LENGTH_LONG).show()
-                                                            } catch (e: Exception) {
-                                                                Toast.makeText(applicationContext, R.string.button_setOnClickListener4, Toast.LENGTH_LONG).show()
-                                                            }
-                                                    }
-                                                    .setNegativeButton(R.string.button_setOnClickListener5) { _, _ ->
+                    }
 
-                                                    }
-                                                    .show()
 
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+                    }
+                })
+
+
+                val image = dialogView.findViewById<View>(R.id.imageView16) as ImageView
+
+                image.setImageURI(Uri.parse(myDir))
+
+                val button = dialogView.findViewById(R.id.button) as Button
+                val button2 = dialogView.findViewById(R.id.button2) as Button
+                val button3 = dialogView.findViewById(R.id.button3) as Button
+
+                button.setOnClickListener {
+                    when {
+                        start < stop -> {
+                            val builder2 = AlertDialog.Builder(this)
+                            val inflater2 = layoutInflater
+                            val dialogView2 = inflater2.inflate(R.layout.file_name, null)
+                            builder2.setView(dialogView2)
+                                .setTitle(R.string.button_setOnClickListener1)
+                                .setPositiveButton(R.string.button_setOnClickListener2) { _, _ ->
+                                    val nt = dialogView2.findViewById<EditText>(R.id.filename)
+                                    val fnt = this.getExternalFilesDir(Environment.DIRECTORY_MUSIC)
+                                        .toString() + "/" + nt.text.replace("/".toRegex(),
+                                        "") + audioName.replaceBeforeLast(".", "")
+                                    try {
+                                        FFmpeg.execute("-ss ${text1.text} -to ${text2.text} -i $audioName -y $fnt")
+                                        button3.performClick()
+                                        Toast.makeText(applicationContext,
+                                            R.string.button_setOnClickListener3,
+                                            Toast.LENGTH_LONG).show()
+                                    } catch (e: Exception) {
+                                        Toast.makeText(applicationContext,
+                                            R.string.button_setOnClickListener4,
+                                            Toast.LENGTH_LONG).show()
                                     }
-                                    start > stop -> Toast.makeText(applicationContext, R.string.button_setOnClickListener6, Toast.LENGTH_LONG).show()
-                                    start == stop -> Toast.makeText(applicationContext, R.string.button_setOnClickListener6, Toast.LENGTH_LONG).show()
-                            }
-                    }
+                                }
+                                .setNegativeButton(R.string.button_setOnClickListener5) { _, _ ->
 
-                    button2.setOnClickListener {
-                        if (switch3.isChecked) {
-                            mp.stop()
-                            mp.prepare()
-                            handler.removeCallbacksAndMessages(null)
-                            switch3.isChecked = false
-                        } else {
-                            mp.seekTo(start)
-                            mp.start()
-                            switch3.isChecked = true
-                            if (mp.isPlaying)
-                                handler.postDelayed({
-                                    mp.stop()
-                                    mp.prepare()
-                                    switch3.isChecked = false
-                                }, (stop - start).toLong())
+                                }
+                                .show()
+
                         }
+                        start > stop -> Toast.makeText(applicationContext,
+                            R.string.button_setOnClickListener6,
+                            Toast.LENGTH_LONG).show()
+                        start == stop -> Toast.makeText(applicationContext,
+                            R.string.button_setOnClickListener6,
+                            Toast.LENGTH_LONG).show()
                     }
+                }
 
-
-
-                    builder.setView(dialogView)
-                            .setOnCancelListener {
+                button2.setOnClickListener {
+                    if (switch3.isChecked) {
+                        mp.stop()
+                        mp.prepare()
+                        handler.removeCallbacksAndMessages(null)
+                        switch3.isChecked = false
+                    } else {
+                        mp.seekTo(start)
+                        mp.start()
+                        switch3.isChecked = true
+                        if (mp.isPlaying)
+                            handler.postDelayed({
                                 mp.stop()
                                 mp.prepare()
                                 switch3.isChecked = false
-                            }
-                            val dialog = builder.create()
-                            dialog.show()
+                            }, (stop - start).toLong())
+                    }
+                }
+
+
+
+                builder.setView(dialogView)
+                    .setOnCancelListener {
+                        mp.stop()
+                        mp.prepare()
+                        switch3.isChecked = false
+                    }
+                val dialog = builder.create()
+                dialog.show()
 
                 button3.setOnClickListener {
                     dialog.cancel()
+                }
+            } catch (e: Exception) {
+                    Toast.makeText(applicationContext,
+                        R.string.error,
+                        Toast.LENGTH_LONG).show()
                 }
 
             }
