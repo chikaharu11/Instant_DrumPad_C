@@ -1744,6 +1744,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             permissions: Array<out String>,
             grantResults: IntArray
     ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == RECORD_AUDIO_PERMISSION_REQUEST_CODE) {
             if (grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(
