@@ -2530,7 +2530,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     override fun onDestroy() {
-            lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.ta))
         lmp.reset()
         lmp.release()
         mp.reset()
