@@ -18,6 +18,7 @@ import android.os.Environment
 import android.os.Handler
 import android.provider.DocumentsContract
 import android.provider.MediaStore
+import android.util.DisplayMetrics
 import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
@@ -28,9 +29,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.arthenica.mobileffmpeg.FFmpeg
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.custom_dialog.*
 import java.text.SimpleDateFormat
@@ -38,6 +37,9 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity(), CustomAdapterListener {
+
+    private lateinit var adViewContainer: FrameLayout
+    private lateinit var admobmAdView: AdView
 
     private lateinit var mediaProjectionManager: MediaProjectionManager
 
@@ -167,6 +169,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initAdMob()
+        loadAdMob()
+
         textView.text = "cycdh_trasha_07"
         textView2.text = "cycdh_multicrashlo_01"
         textView3.text = "cycdh_crash_01"
@@ -182,12 +187,6 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         textView13.text = "cycdh_loosekick_04"
         textView14.text = "cycdh_keskick_08"
         textView15.text = "cycdh_loosekick_07"
-
-        MobileAds.initialize(this) {}
-
-        val adView = findViewById<AdView>(R.id.adView)
-        val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
 
 
         aSoundList = arrayListOf(
@@ -1381,6 +1380,43 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             meSpinner.performClick()
             true
         }
+    }
+
+    private val adSize: AdSize
+        get() {
+            val display = windowManager.defaultDisplay
+            val outMetrics = DisplayMetrics()
+            display.getMetrics(outMetrics)
+
+            val density = outMetrics.density
+            var adWidthPixels = adViewContainer.width.toFloat()
+            if (adWidthPixels == 0.0f) {
+                adWidthPixels = outMetrics.widthPixels.toFloat()
+            }
+            val adWidth = (adWidthPixels / density).toInt()
+
+
+            return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this@MainActivity, adWidth)
+        }
+
+    private fun initAdMob() {
+        adViewContainer = findViewById(R.id.adView)
+
+        MobileAds.initialize(this) {}
+        admobmAdView = AdView(this)
+        admobmAdView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
+
+        admobmAdView.adListener = object : AdListener() {
+            override fun onAdLoaded() {
+                adViewContainer.addView(admobmAdView)
+            }
+        }
+    }
+
+    private fun loadAdMob() {
+        val request = AdRequest.Builder().build()
+        admobmAdView.adSize = adSize
+        admobmAdView.loadAd(request)
     }
 
     override fun clicked(soundList: SoundList) {
