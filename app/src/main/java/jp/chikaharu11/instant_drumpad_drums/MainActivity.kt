@@ -1395,6 +1395,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     override fun clicked2(soundList: SoundList) {
+        try {
         when {
             radioButton.isChecked && radioButton18.isChecked -> {
                 imageView.setColorFilter(Color.parseColor("#FDF5E6"))
@@ -1686,6 +1687,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 audioName = soundList.name
                 button4.performClick()
             }
+        }
+        } catch (e: Exception) {
+            Toast.makeText(applicationContext, R.string.error, Toast.LENGTH_LONG).show()
         }
         findViewById<ListView>(R.id.list_view).visibility = View.INVISIBLE
     }
