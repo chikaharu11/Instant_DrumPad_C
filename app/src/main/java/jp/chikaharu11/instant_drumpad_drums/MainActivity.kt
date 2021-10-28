@@ -172,21 +172,21 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         initAdMob()
         loadAdMob()
 
-        textView.text = "cycdh_trasha_07"
-        textView2.text = "cycdh_multicrashlo_01"
-        textView3.text = "cycdh_crash_01"
-        textView4.text = "khats_clsd_02"
-        textView5.text = "cycdh_ludflama_04"
-        textView6.text = "cycdh_sab_hfhat_02"
-        textView7.text = "pearlpiccolo_side_snron_01"
-        textView8.text = "cycdh_ludrimc_03"
-        textView9.text = "cycdh_ludflamb_02"
-        textView10.text = "cycdh_ludrima_01"
-        textView11.text = "cycdh_acoukick_12"
-        textView12.text = "acoustic_snare_03"
-        textView13.text = "cycdh_loosekick_04"
-        textView14.text = "cycdh_keskick_08"
-        textView15.text = "cycdh_loosekick_07"
+        textView.text = "cymbal_01"
+        textView2.text = "open_hat_01"
+        textView3.text = "closed_hat_01"
+        textView4.text = ""
+        textView5.text = "tom_02"
+        textView6.text = "snare_01"
+        textView7.text = ""
+        textView8.text = ""
+        textView9.text = "kick_01"
+        textView10.text = ""
+        textView11.text = "tom_01"
+        textView12.text = "tom_03"
+        textView13.text = "cymbal_02"
+        textView14.text = "cymbal_03"
+        textView15.text = ""
 
 
         aSoundList = arrayListOf(
@@ -1135,35 +1135,36 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 .setMaxStreams(20)
                 .build()
 
-        sound1 = soundPool.load(assets.openFd("cycdh_trasha_07.ogg"), 1)
 
-        sound2 = soundPool.load(assets.openFd("cycdh_multicrashlo_01.ogg"), 1)
+        sound1 = soundPool.load(assets.openFd("cymbal_01.ogg"), 1)
 
-        sound3 = soundPool.load(assets.openFd("cycdh_crash_01.ogg"), 1)
+        sound2 = soundPool.load(assets.openFd("open_hat_01.ogg"), 1)
 
-        sound4 = soundPool.load(assets.openFd("khats_clsd_02.ogg"), 1)
+        sound3 = soundPool.load(assets.openFd("closed_hat_01.ogg"), 1)
 
-        sound5 = soundPool.load(assets.openFd("cycdh_ludflama_04.ogg"), 1)
+        sound4 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound6 = soundPool.load(assets.openFd("cycdh_sab_hfhat_02.ogg"), 1)
+        sound5 = soundPool.load(assets.openFd("tom_02.ogg"), 1)
 
-        sound7 = soundPool.load(assets.openFd("pearlpiccolo_side_snron_01.ogg"), 1)
+        sound6 = soundPool.load(assets.openFd("snare_01.ogg"), 1)
 
-        sound8 = soundPool.load(assets.openFd("cycdh_ludrimc_03.ogg"), 1)
+        sound7 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound9 = soundPool.load(assets.openFd("cycdh_ludflamb_02.ogg"), 1)
+        sound8 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound10 = soundPool.load(assets.openFd("cycdh_ludrima_01.ogg"), 1)
+        sound9 = soundPool.load(assets.openFd("kick_01.ogg"), 1)
 
-        sound11 = soundPool.load(assets.openFd("cycdh_acoukick_12.ogg"), 1)
+        sound10 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
-        sound12 = soundPool.load(assets.openFd("acoustic_snare_03.ogg"), 1)
+        sound11 = soundPool.load(assets.openFd("tom_01.ogg"), 1)
 
-        sound13 = soundPool.load(assets.openFd("cycdh_loosekick_04.ogg"), 1)
+        sound12 = soundPool.load(assets.openFd("tom_03.ogg"), 1)
 
-        sound14 = soundPool.load(assets.openFd("cycdh_keskick_08.ogg"), 1)
+        sound13 = soundPool.load(assets.openFd("cymbal_02.ogg"), 1)
 
-        sound15 = soundPool.load(assets.openFd("cycdh_loosekick_07.ogg"), 1)
+        sound14 = soundPool.load(assets.openFd("cymbal_03.ogg"), 1)
+
+        sound15 = soundPool.load(assets.openFd("ta.ogg"), 1)
 
         lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.guitar_85_01))
 
