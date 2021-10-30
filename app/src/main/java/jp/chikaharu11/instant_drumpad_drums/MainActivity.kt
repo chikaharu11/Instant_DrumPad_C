@@ -7,6 +7,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.media.*
@@ -176,21 +177,46 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         initAdMob()
         loadAdMob()
 
-        textView.text = "cymbal_01"
-        textView2.text = "open_hat_01"
-        textView3.text = "closed_hat_01"
-        textView4.text = ""
-        textView5.text = "tom_02"
-        textView6.text = "snare_01"
-        textView7.text = ""
-        textView8.text = ""
-        textView9.text = "kick_01"
-        textView10.text = ""
-        textView11.text = "tom_01"
-        textView12.text = "tom_03"
-        textView13.text = "cymbal_02"
-        textView14.text = "cymbal_03"
-        textView15.text = ""
+        val orientation = resources.configuration.orientation
+
+        when (orientation) {
+            Configuration.ORIENTATION_PORTRAIT -> {
+                textView.text = "cymbal_01"
+                textView2.text = ""
+                textView3.text = "cymbal_02"
+                textView4.text = "open_hat_01"
+                textView5.text = ""
+                textView6.text = "cymbal_03"
+                textView7.text = "closed_hat_01"
+                textView8.text = "tom_02"
+                textView9.text = "tom_01"
+                textView10.text = "snare_01"
+                textView11.text = "kick_01"
+                textView12.text = "tom_03"
+                textView13.text = ""
+                textView14.text = ""
+                textView15.text = ""
+            }
+            Configuration.ORIENTATION_LANDSCAPE -> {
+                textView.text = "cymbal_01"
+                textView2.text = "open_hat_01"
+                textView3.text = "closed_hat_01"
+                textView4.text = ""
+                textView5.text = "tom_02"
+                textView6.text = "snare_01"
+                textView7.text = ""
+                textView8.text = ""
+                textView9.text = "kick_01"
+                textView10.text = ""
+                textView11.text = "tom_01"
+                textView12.text = "tom_03"
+                textView13.text = "cymbal_02"
+                textView14.text = "cymbal_03"
+                textView15.text = ""
+            }
+        }
+
+
 
         a0SoundList = arrayListOf(
             SoundList("cymbal_01.ogg"),
@@ -1065,8 +1091,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         meSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long,
             ) {
                 if (!meSpinner.isFocusable) {
                     meSpinner.isFocusable = true
@@ -1185,19 +1211,51 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                         soundListView.visibility = View.VISIBLE
                     }
                     18 -> {
+                        textView.text = ""
+                        textView2.text = ""
+                        textView3.text = ""
+                        textView4.text = ""
+                        textView5.text = ""
+                        textView6.text = ""
+                        textView7.text = ""
+                        textView8.text = ""
+                        textView9.text = ""
+                        textView10.text = ""
+                        textView11.text = ""
+                        textView12.text = ""
+                        textView13.text = ""
+                        textView14.text = ""
+                        textView15.text = ""
+                        sound1 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound3 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound6 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound9 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound11 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound12 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                        sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+                    }
+                    19 -> {
                         radioButton18.performClick()
                         soundListView.adapter = sCustomAdapter
                         sCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    19 -> {
+                    20 -> {
                         selectEX()
                         radioButton18.performClick()
                         soundListView.adapter = tCustomAdapter
                         tCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    20 -> selectAudio()
+                    21 -> selectAudio()
                 }
             }
 
@@ -1222,36 +1280,76 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 .setMaxStreams(20)
                 .build()
 
+        when (orientation) {
 
-        sound1 = soundPool.load(assets.openFd("cymbal_01.ogg"), 1)
+            Configuration.ORIENTATION_PORTRAIT -> {
 
-        sound2 = soundPool.load(assets.openFd("open_hat_01.ogg"), 1)
+                sound1 = soundPool.load(assets.openFd("cymbal_01.ogg"), 1)
 
-        sound3 = soundPool.load(assets.openFd("closed_hat_01.ogg"), 1)
+                sound2 = soundPool.load(assets.openFd("soundless.ogg"), 1)
 
-        sound4 = soundPool.load(assets.openFd("ta.ogg"), 1)
+                sound3 = soundPool.load(assets.openFd("cymbal_02.ogg"), 1)
 
-        sound5 = soundPool.load(assets.openFd("tom_02.ogg"), 1)
+                sound4 = soundPool.load(assets.openFd("open_hat_01.ogg"), 1)
 
-        sound6 = soundPool.load(assets.openFd("snare_01.ogg"), 1)
+                sound5 = soundPool.load(assets.openFd("soundless.ogg"), 1)
 
-        sound7 = soundPool.load(assets.openFd("ta.ogg"), 1)
+                sound6 = soundPool.load(assets.openFd("cymbal_03.ogg"), 1)
 
-        sound8 = soundPool.load(assets.openFd("ta.ogg"), 1)
+                sound7 = soundPool.load(assets.openFd("closed_hat_01.ogg"), 1)
 
-        sound9 = soundPool.load(assets.openFd("kick_01.ogg"), 1)
+                sound8 = soundPool.load(assets.openFd("tom_02.ogg"), 1)
 
-        sound10 = soundPool.load(assets.openFd("ta.ogg"), 1)
+                sound9 = soundPool.load(assets.openFd("tom_01.ogg"), 1)
 
-        sound11 = soundPool.load(assets.openFd("tom_01.ogg"), 1)
+                sound10 = soundPool.load(assets.openFd("snare_01.ogg"), 1)
 
-        sound12 = soundPool.load(assets.openFd("tom_03.ogg"), 1)
+                sound11 = soundPool.load(assets.openFd("kick_01.ogg"), 1)
 
-        sound13 = soundPool.load(assets.openFd("cymbal_02.ogg"), 1)
+                sound12 = soundPool.load(assets.openFd("tom_03.ogg"), 1)
 
-        sound14 = soundPool.load(assets.openFd("cymbal_03.ogg"), 1)
+                sound13 = soundPool.load(assets.openFd("soundless.ogg"), 1)
 
-        sound15 = soundPool.load(assets.openFd("ta.ogg"), 1)
+                sound14 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+
+                sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+
+            }
+
+            Configuration.ORIENTATION_LANDSCAPE -> {
+
+                sound1 = soundPool.load(assets.openFd("cymbal_01.ogg"), 1)
+
+                sound2 = soundPool.load(assets.openFd("open_hat_01.ogg"), 1)
+
+                sound3 = soundPool.load(assets.openFd("closed_hat_01.ogg"), 1)
+
+                sound4 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+
+                sound5 = soundPool.load(assets.openFd("tom_02.ogg"), 1)
+
+                sound6 = soundPool.load(assets.openFd("snare_01.ogg"), 1)
+
+                sound7 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+
+                sound8 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+
+                sound9 = soundPool.load(assets.openFd("kick_01.ogg"), 1)
+
+                sound10 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+
+                sound11 = soundPool.load(assets.openFd("tom_01.ogg"), 1)
+
+                sound12 = soundPool.load(assets.openFd("tom_03.ogg"), 1)
+
+                sound13 = soundPool.load(assets.openFd("cymbal_02.ogg"), 1)
+
+                sound14 = soundPool.load(assets.openFd("cymbal_03.ogg"), 1)
+
+                sound15 = soundPool.load(assets.openFd("soundless.ogg"), 1)
+
+            }
+        }
 
         lmp = LoopMediaPlayer.create(this, Uri.parse("android.resource://" + packageName + "/raw/" + R.raw.guitar_85_01))
 
@@ -1868,9 +1966,9 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     }
 
     override fun onRequestPermissionsResult(
-            requestCode: Int,
-            permissions: Array<out String>,
-            grantResults: IntArray
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray,
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == RECORD_AUDIO_PERMISSION_REQUEST_CODE) {
@@ -2128,8 +2226,8 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         chSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
             override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?, position: Int, id: Long
+                parent: AdapterView<*>?,
+                view: View?, position: Int, id: Long,
             ) {
                 if (!chSpinner.isFocusable) {
                     chSpinner.isFocusable = true
@@ -2374,7 +2472,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     override fun onProgressChanged(
                         seekBar: SeekBar?,
                         progress: Int,
-                        fromUser: Boolean
+                        fromUser: Boolean,
                     ) {
                         text1.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
                         start = progress
@@ -2398,7 +2496,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                     override fun onProgressChanged(
                         seekBar: SeekBar?,
                         progress: Int,
-                        fromUser: Boolean
+                        fromUser: Boolean,
                     ) {
                         text2.text = SimpleDateFormat("mm:ss.SSS").format(Date(progress.toLong()))
                         stop = progress
