@@ -90,6 +90,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
     private lateinit var lmp: LoopMediaPlayer
 
+    private lateinit var a0CustomAdapter: CustomAdapter
     private lateinit var aCustomAdapter: CustomAdapter
     private lateinit var bCustomAdapter: CustomAdapter
     private lateinit var cCustomAdapter: CustomAdapter
@@ -106,6 +107,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var aaCustomAdapter: CustomAdapter
     private lateinit var abCustomAdapter: CustomAdapter
     private lateinit var acCustomAdapter: CustomAdapter
+    private lateinit var adCustomAdapter: CustomAdapter
 
     private lateinit var nCustomAdapter: CustomAdapter
     private lateinit var oCustomAdapter: CustomAdapter
@@ -118,6 +120,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var sCustomAdapter: CustomAdapter
     private lateinit var tCustomAdapter: CustomAdapter
 
+    private lateinit var a0SoundList: MutableList<SoundList>
     private lateinit var aSoundList: MutableList<SoundList>
     private lateinit var bSoundList: MutableList<SoundList>
     private lateinit var cSoundList: MutableList<SoundList>
@@ -134,6 +137,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
     private lateinit var aaSoundList: MutableList<SoundList>
     private lateinit var abSoundList: MutableList<SoundList>
     private lateinit var acSoundList: MutableList<SoundList>
+    private lateinit var adSoundList: MutableList<SoundList>
 
     private lateinit var nSoundList: MutableList<SoundList>
     private lateinit var oSoundList: MutableList<SoundList>
@@ -188,6 +192,30 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         textView14.text = "cymbal_03"
         textView15.text = ""
 
+        a0SoundList = arrayListOf(
+            SoundList("cymbal_01.ogg"),
+            SoundList("cymbal_02.ogg"),
+            SoundList("cymbal_03.ogg"),
+            SoundList("open_hat_01.ogg"),
+            SoundList("open_hat_02.ogg"),
+            SoundList("open_hat_03.ogg"),
+            SoundList("closed_hat_01.ogg"),
+            SoundList("closed_hat_02.ogg"),
+            SoundList("closed_hat_03.ogg"),
+            SoundList("closed_hat_04.ogg"),
+            SoundList("closed_hat_05.ogg"),
+            SoundList("kick_01.ogg"),
+            SoundList("kick_02.ogg"),
+            SoundList("kick_03.ogg"),
+            SoundList("kick_04.ogg"),
+            SoundList("snare_01.ogg"),
+            SoundList("snare_02.ogg"),
+            SoundList("snare_03.ogg"),
+            SoundList("snare_04.ogg"),
+            SoundList("tom_01.ogg"),
+            SoundList("tom_02.ogg"),
+            SoundList("tom_03.ogg")
+        )
 
         aSoundList = arrayListOf(
             SoundList("cycdh_crash_01.ogg"),
@@ -589,6 +617,51 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
             SoundList("cycdh_piccoloe_03.ogg"),
             SoundList("cycdh_piccoloe_04.ogg")
         )
+        adSoundList = arrayListOf(
+            SoundList("tom_1.ogg"),
+            SoundList("tom_2.ogg"),
+            SoundList("tom_3.ogg"),
+            SoundList("tom_4.ogg"),
+            SoundList("tom_5.ogg"),
+            SoundList("tom_6.ogg"),
+            SoundList("tom_7.ogg"),
+            SoundList("tom_8.ogg"),
+            SoundList("tom_9.ogg"),
+            SoundList("tom_10.ogg"),
+            SoundList("tom_11.ogg"),
+            SoundList("tom_12.ogg"),
+            SoundList("tom_13.ogg"),
+            SoundList("tom_14.ogg"),
+            SoundList("tom_15.ogg"),
+            SoundList("tom_16.ogg"),
+            SoundList("tom_17.ogg"),
+            SoundList("tom_18.ogg"),
+            SoundList("tom_19.ogg"),
+            SoundList("tom_20.ogg"),
+            SoundList("tom_21.ogg"),
+            SoundList("tom_22.ogg"),
+            SoundList("tom_23.ogg"),
+            SoundList("tom_24.ogg"),
+            SoundList("tom_25.ogg"),
+            SoundList("tom_26.ogg"),
+            SoundList("tom_27.ogg"),
+            SoundList("tom_28.ogg"),
+            SoundList("tom_29.ogg"),
+            SoundList("tom_30.ogg"),
+            SoundList("tom_31.ogg"),
+            SoundList("tom_32.ogg"),
+            SoundList("tom_33.ogg"),
+            SoundList("tom_34.ogg"),
+            SoundList("tom_35.ogg"),
+            SoundList("tom_36.ogg"),
+            SoundList("tom_37.ogg"),
+            SoundList("tom_38.ogg"),
+            SoundList("tom_39.ogg"),
+            SoundList("tom_40.ogg"),
+            SoundList("tom_41.ogg"),
+            SoundList("tom_42.ogg"),
+            SoundList("tom_43.ogg")
+        )
         nSoundList = arrayListOf(
             SoundList("bass_85_01.ogg"),
             SoundList("bass_85_02.ogg"),
@@ -930,6 +1003,7 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
 
         val listView = findViewById<ListView>(R.id.list_view)
 
+        a0CustomAdapter = CustomAdapter(this, a0SoundList, this)
         aCustomAdapter = CustomAdapter(this, aSoundList, this)
         bCustomAdapter = CustomAdapter(this, bSoundList, this)
         cCustomAdapter = CustomAdapter(this, cSoundList, this)
@@ -943,9 +1017,10 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
         kCustomAdapter = CustomAdapter(this, kSoundList, this)
         lCustomAdapter = CustomAdapter(this, lSoundList, this)
         mCustomAdapter = CustomAdapter(this, mSoundList, this)
-        aaCustomAdapter = CustomAdapter(this, aSoundList, this)
-        abCustomAdapter = CustomAdapter(this, aSoundList, this)
-        acCustomAdapter = CustomAdapter(this, aSoundList, this)
+        aaCustomAdapter = CustomAdapter(this, aaSoundList, this)
+        abCustomAdapter = CustomAdapter(this, abSoundList, this)
+        acCustomAdapter = CustomAdapter(this, acSoundList, this)
+        adCustomAdapter = CustomAdapter(this, adSoundList, this)
         nCustomAdapter = CustomAdapter(this, nSoundList, this)
         oCustomAdapter = CustomAdapter(this, oSoundList, this)
         pCustomAdapter = CustomAdapter(this, pSoundList, this)
@@ -1003,114 +1078,126 @@ class MainActivity : AppCompatActivity(), CustomAdapterListener {
                 when(position){
                     0 -> {
                         radioButton19.performClick()
+                        soundListView.adapter = a0CustomAdapter
+                        a0CustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
+                    }
+                    1 -> {
+                        radioButton19.performClick()
                         soundListView.adapter = aCustomAdapter
                         aCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    1 -> {
+                    2 -> {
                         radioButton19.performClick()
                         soundListView.adapter = bCustomAdapter
                         bCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    2 -> {
+                    3 -> {
                         radioButton19.performClick()
                         soundListView.adapter = cCustomAdapter
                         cCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    3 -> {
+                    4 -> {
                         radioButton19.performClick()
                         soundListView.adapter = dCustomAdapter
                         dCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    4 -> {
+                    5 -> {
                         radioButton19.performClick()
                         soundListView.adapter = eCustomAdapter
                         eCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    5 -> {
+                    6 -> {
                         radioButton19.performClick()
                         soundListView.adapter = fCustomAdapter
                         fCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    6 -> {
+                    7 -> {
                         radioButton19.performClick()
                         soundListView.adapter = gCustomAdapter
                         gCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    7 -> {
+                    8 -> {
                         radioButton19.performClick()
                         soundListView.adapter = hCustomAdapter
                         hCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    8 -> {
+                    9 -> {
                         radioButton19.performClick()
                         soundListView.adapter = iCustomAdapter
                         iCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    9 -> {
+                    10 -> {
                         radioButton19.performClick()
                         soundListView.adapter = jCustomAdapter
                         jCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    10 -> {
+                    11 -> {
                         radioButton19.performClick()
                         soundListView.adapter = kCustomAdapter
                         kCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    11 -> {
+                    12 -> {
                         radioButton19.performClick()
                         soundListView.adapter = lCustomAdapter
                         lCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    12 -> {
+                    13 -> {
                         radioButton19.performClick()
                         soundListView.adapter = mCustomAdapter
                         mCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    13 -> {
-                        radioButton19.performClick()
-                        soundListView.adapter = mCustomAdapter
-                        aaCustomAdapter.notifyDataSetChanged()
-                        soundListView.visibility = View.VISIBLE
-                    }
                     14 -> {
                         radioButton19.performClick()
-                        soundListView.adapter = mCustomAdapter
-                        abCustomAdapter.notifyDataSetChanged()
+                        soundListView.adapter = aaCustomAdapter
+                        aaCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     15 -> {
                         radioButton19.performClick()
-                        soundListView.adapter = mCustomAdapter
-                        acCustomAdapter.notifyDataSetChanged()
+                        soundListView.adapter = abCustomAdapter
+                        abCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
                     16 -> {
+                        radioButton19.performClick()
+                        soundListView.adapter = acCustomAdapter
+                        acCustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
+                    }
+                    17 -> {
+                        radioButton19.performClick()
+                        soundListView.adapter = adCustomAdapter
+                        adCustomAdapter.notifyDataSetChanged()
+                        soundListView.visibility = View.VISIBLE
+                    }
+                    18 -> {
                         radioButton18.performClick()
                         soundListView.adapter = sCustomAdapter
                         sCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    17 -> {
+                    19 -> {
                         selectEX()
                         radioButton18.performClick()
                         soundListView.adapter = tCustomAdapter
                         tCustomAdapter.notifyDataSetChanged()
                         soundListView.visibility = View.VISIBLE
                     }
-                    18 -> selectAudio()
+                    20 -> selectAudio()
                 }
             }
 

@@ -98,6 +98,7 @@
     <string name="highest">音量:Highest</string>
 
     <string-array name="spinnerItems">
+        <item>Basic Drum sets</item>
         <item>Cymbals</item>
         <item>Cymbals [Trash Crashes]</item>
         <item>Hi Hats [Acoustic]</item>
@@ -114,6 +115,7 @@
         <item>Snares [Sonor Force 3000]</item>
         <item>Snares [Tama Wood]</item>
         <item>Snares [Wooden Piccolo]</item>
+        <item>Toms</item>
         <item>内部サウンド</item>
         <item>外部サウンド</item>
         <item>Musicフォルダのサウンド"</item>
